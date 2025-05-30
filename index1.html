@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+
+    html {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+  }
+  body {
+    margin: 0px;
+    padding: 0px;
+    background-color: #654321 ;
+    color: #fff;
+  }
+  .layar-dalam {
+    width: 1000px;
+    margin: auto;
+  }
+  .layar-penuh {
+    width: 100%;
+  }
+  nav {
+    z-index: 100;
+    color: #fff;
+    text-align: center;
+    position: fixed;
+    border-bottom: 1px solid #b1b1b1;
+    line-height: 60px;
+    width: 100%;
+    transition: background-color 0.5s ease;
+  }
+  nav .logo {
+    float: left;
+    position: relative;
+    line-height: 55px;
+    text-align: center;
+  }
+  nav .logo img {
+    vertical-align: middle;
+    width: 120px;
+  }
+  
+  nav .menu {
+    float: right;
+    height: 60px;
+    max-width: 700px;
+
+  }
+  
+  nav .menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  nav .menu ul li {
+    list-style-type: none;
+    float: left;
+    line-height: 60px;
+  }
+  
+  nav ul li a {
+    color: #fff;
+    text-align: center;
+    padding: 0px 16px 0px 16px;
+    text-decoration: none;
+  }
+  
+  nav ul li a:hover {
+    text-decoration: underline;
+  }
+  
+  header {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    z-index: 2;
+  }
+  header video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    z-index: -2;
+  }
+  header .intro {
+    z-index: 100;
+    color: #fff;
+    text-align: center;
+    position: relative;
+    top: 50%;
+  }
+  header .intro h3 {
+    font-size: 50px;
+  }
+
+  header .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #000;
+    opacity: 50%;
+    z-index: -1;
+  }
+  .tombol-menu {
+    position: absolute;
+    top: 1.7rem;
+    right: 1rem;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+  }
+  .tombol-menu .garis {
+    height: 3px;
+    background-color: #fff;
+  }
+  section {
+    padding: 50px 0px 50px 0px;
+  }
+  section h3 {
+    font-size: 30px;
+  }
+  
+  .container {
+            margin: 25px;
+            padding: 16px;
+
+  }
+
+  section.quote {
+  background: url("asset/background-bromo.jpg") no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+  color: #fff;
+  font-size: 20px;
+  font-style: italic;
+  padding: 100px;
+}
+section.quote .layar-dalam p {
+  display: inline;
+  background: url("asset/quote-icon.png") no-repeat;
+  padding: 40px;
+}
+  
+footer {
+  padding: 50px 0px 50px 0px;
+  background-color: #321414      ;
+  color: #fff;
+}
+footer .layar-dalam {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+footer .layar-dalam div {
+  width: 20%;
+}
+footer .layar-dalam h5 {
+  margin-top: 0px;
+  font-size: 20px;
+  font-weight: bold;
+}
+footer .layar-dalam .copyright {
+  width: 100%;
+  margin-top: 30px;
+  padding-top: 30px;
+  border-top: 1px solid #666;
+  text-align: center;   
+}
+
+.card-container {
+      display: flex;
+      justify-content: center;
+      gap: 40px; 
+      flex-wrap: nowrap; 
+    }
+
+    .card {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      width: 300px; 
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .card-img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .card-content {
+      padding: 20px;
+      width: 100%;
+    }
+
+    h2 {
+      font-size: 1.2em;
+      color: #080808;
+      margin: 0 0 5px;
+    }
+
+    h3 {
+      font-size: 1.5em;
+      margin: 0.5em 0;
+    }
+
+
+    .location {
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    .map-link {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 15px;
+      background-color: #007bff;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+
+    .map-link:hover {
+      background-color: #0056b3;
+    }
+    p {
+      color: #151515;
+      line-height: 1.6;
+    }
+
+    .anim-typewriter {
+    overflow: hidden;
+    border-right: 0.15em solid orange;
+    white-space: nowrap;
+    margin: 0  auto;
+    letter-spacing: .10em;
+    animation: typing 3.8s steps(70, end), blink-caret .75s step-end infinite;
+    width: max-content;
+    
+}
+
+@keyframes typing {
+    from {
+        width: 0
+    }
+
+    to {
+        width: 100%
+    }
+}
+
+@keyframes blink-caret {
+    from, to {
+        border-color: transparent
+    }
+
+    50% {
+        border-color: orange;
+    }
+}
+
+header .intro h3 {
+    font-size: 50px;
+    text-align: center;
+    max-width: 37vw;
+  }
+
+    
+    </style>
+</head>
+<body>
+    <nav>
+      <div class="layar-dalam">
+    
+      </div>
+    </nav>
+    <div class="layar-penuh">
+      <header id="home">
+        <div class="overlay"></div>
+        <video autoplay muted loop>
+          <source src="asset/3015488-hd_1920_1080_24fps.mp4" type="video/mp4"/>
+        </video>
+        <div class="intro">
+          <h3 class="line-1 anim-typewriter title">kuliner Gunung kidul</h3>  
+          <p></p>
+           kuliner di gunung kidul sangat menarik utuk di nikmati
+        </div>
+      </header>
+<p>
+    <div class="view">
+      <div class="card-container">
+    <div class="card">
+      <img src="asset/Belalang-Goreng.jpg" alt="Makam Raja Imogiri Kiri" class="card-img" />
+      <div class="card-content">
+        <h2>Belalang-Goreng</h2>
+        <p>Bosan dengan makanan yang biasa saja, Gunung Kidul punya makanan eksotis yang terbuat dari serangga yakni belalang goreng. Tidak banyak orang yang suka karena takut dengan bentuknya padahal rasanya luar biasa.
+
+Tekstur belalang goreng ini renyah dengan rasa khas pedas manis gurih yang nagih. Selain itu kadar proteinnya juga tinggi sehingga bisa menjadi pengganti protein biasa.
+
+Jika Anda tertarik, banyak pusat oleh-oleh yang menjual walang goreng ini. Harganya juga bervariasi berkisar antara Rp18.000,00 hingga Rp25.000,00 tergantung ukuran kemasan.
+<p class="location">Gunung kidul, Yogyakarta</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="asset/Tiwul.webp" alt="Wisata Gunung Kidul Tengah" class="card-img" />
+      <div class="card-content">
+        <h2>Tiwul</h2>
+        <p>
+Gunung Kidul dan tiwul hampir tidak pernah terpisahkan. Makanan manis satu ini sudah menjadi ikon makanan yang wajib sekali Anda coba saat mengunjungi Gunung Kidul.
+
+Meski sudah ada sejak masa penjajahan, tiwul tidak pernah ketinggalan zaman. Saat ini sudah banyak variasi tiwul yang bisa Anda coba salah satunya tiwul manis.
+
+Tiwul yang biasanya hanya berupa campuran singkong, kelapa, gula, dan garam ini mendapat tambahan berbagai rasa menarik. Seperti misalnya cokelat, pandan, gula jawa, kopi, hingga keju.
+
+Salah satu pelopor dan produsen paling terkenalnya adalah Thiwul Manis Pak Lambang yang terletak di Jl. Baron No.Km. 4, Dungabah I, Duwet, Wonosari. Tiwul ini juga bisa jadi pilihan oleh-oleh khas Jogja selain bakpia yang bisa Anda bawa.
+        <p class="location">Gunung Kidul, Yogyakarta</p>
+          </div>
+    </div>
+
+  <div class="card">
+      <img src="asset/Gatot.webp" alt="Pantai Parangtritis Kanan" class="card-img" />
+      <div class="card-content">
+        <h2>Gatot</h2>
+        <p>Makanan khas Gunung Kidul yang terbuat dari singkong selanjutnya adalah gatot. Proses pembuatannya cukup panjang, singkong harus menjadi gaplek terlebih dahulu baru kemudian masuk proses rendam dan kukus.
+
+Setelah itu baru mendapat tambahan gula, garam dan kelapa untuk memberikan rasa. Penyajiannya juga cukup sederhana, cukup berikan taburan parutan kelapa di atas gatot yang sudah jadi.
+
+Biasanya panganan ini menjadi camilan saat bersantai dan memiliki rasa yang tidak kalah dari colenak, makanan khas Purwakarta. Anda bisa mendapatkan gatot di sejumlah pasar tradisional yang ada di Jogja.
+
+Harganya juga tidak mahal, hanya dengan uang Rp5.000,00 sudah bisa Anda nikmati. Bisa juga dengan mengunjungi pusat oleh-oleh Gathot Thiwul Yu Tum yang menjual gatot instan dengan harga sekitar Rp19.000,00 per kotak.
+        <p class="location">Gunung Kidul, Yogyakarta</p>
+      </div>
+    </div>
+  </div>
+  <p>
+
+     <div class="card-container">
+    <div class="card">
+      <img src="asset/bakmi-jawa-mbah-gito_1341686495-1068x712.jpg" alt="Makam Raja Imogiri Kiri" class="card-img" />
+      <div class="card-content">
+        <h2>Bakmi jawa</h2>
+        <p>Makanan khas lain dari Gunung Kidul yang wajib Anda coba selanjutnya adalah Bakmi Jawa. Ciri khas olahan mie ini terletak pada campuran ayam kampung serta arang yang jadi bahan bakarnya.
+
+Biasanya mienya pun buatan sendiri sehingga punya tekstur serta bentuk yang khas. Aroma dari arang serta perpaduan antara mie, telur, sayur, dan ayam kampung membuat siapapun yang mencoba pasti ketagihan.
+
+Makanan ini paling cocok Anda nikmati saat malam hari, salah satunya di Warung Bakmi Mbah Noto. Lokasinya terletak di Jl. Jogja – Wonosari, Logandeng, Playen, tidak jauh dari restoran yang nyaman di Jogja SalSari Resto.
+
+Anda bisa datang mulai pukul 06.00 WIB hingga 23.00 WIB setiap harinya, namun bakmi baru ada setelah pukul 14.00 WIB. Untuk harga normalnya sendiri tidak terlalu mahal sekitar Rp13.000,00 per porsinya.
+
+        <p class="location">Gunung kidul, Yogyakarta</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="asset/Krecek-dan-Kicikan.webp" alt="Wisata Gunung Kidul Tengah" class="card-img" />
+      <div class="card-content">
+        <h2>Krecek dan Kicikan</h2>
+        <p>Gunung Kidul punya olahan kulit yang sangat terkenal kelezatannya yakni krecek dan kicikan. Meski sama-sama berasal dari kulit sapi dan kambing, tekstur serta bumbu masak masakan ini berbeda.
+
+Krecek memiliki warna merah dengan tekstur yang lembut dan punya rasa pedas. Lauk tambahan krecek biasanya berupa tempe, kentang, atau tahu. Makanan ini sering kali Anda temukan sebagai berkat dalam acara hajatan.
+
+Sedangkan kicik berwarna hitam mirip semur dengan bumbu kicik yang khusus. Selain itu isiannya tidak hanya kulit sapi, terkadang ada juga tambahan cincangan daging serta jeroan.
+
+Kicikan ini sendiri sudah cukup sulit Anda jumpai hanya di beberapa pasar tradisional dan rumah makan saja. Namun untuk krecek, hampir sebagian besar rumah makan di sekitar tempat wisata Gunung Kidul yang lagi hits menyediakannya. <p class="location">Gunung Kidul, Yogyakarta</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="asset/puli tempe.jpg" alt="Pantai Parangtritis Kanan" class="card-img" />
+      <div class="card-content">
+        <h2>Puli Tempe</h2>
+        <p>Hidangan unik dari Gunung Kidul selanjutnya adalah puli tempe yang sekilas mirip tape uli, makanan khas Jakarta. Namun bedanya, jika tape uli menggunakan ketan, puli ini terbuat dari beras dibuat menjadi kenyal.
+
+Sehingga tekstur nasinya jadi lebih padat dan lengket seperti kue beras ketan dengan rasa asin yang khas. Agar semakin enak, puli pengganti nasi ini harus Anda nikmati bersama tempe.
+
+Terlihat sederhana tapi rasanya bisa sangat menggoda dan menambah nafsu makan. Buktinya saja warung Pecel Puli Tempe Mba Puji yang ada di Semanu selalu ramai dan habis sebelum pukul 09.00 WIB.
+ <p class="location">Gunung Kidul, Yogyakarta</p>
+      </div>
+    </div>
+  </div>
+      <a href="index.html"><img src="asset/back-arrow_icon-icons.com_72866.png" width="70px"></a>
+   
+  <p>
+    <section class="quote">
+        <div class="layar-dalam">
+          <p></p>Hilangkan rasa lapar mu dengan kuliner gunung kidul</p>
+        </div>
+      </section>
+     
+        <footer id="contact">
+    <div class="layar-dalam">
+      <div>
+        <img src="asset/ra.gif">
+        <p></p>costumer service</p>
+        <p></p>pariwisatagunungkidul@gmail.com</p>
+      </div>
+    <div>
+        <img src="asset/phone-call.png" width="100px">
+        <p></p>
+        phoone number
+          08757887
+      </div>
+      <div>
+        <img src="asset/r.gif"><p></p>
+        1. Nama: Dinas Pariwisata Kabupaten Gunungkidul<p></p>
+2. Alamat: Jl. Sultan Agung No. 17, Wonokromo, Playen, Gunungkidul, DIY
+      </div>
+    </div>
+    <div class="layar-dalam">
+      <div class="copyright">&copy; pariwisatagunungkidul</div>
+    </div>
+  </footer>
+  
+    </body>
+
+
+</html>

@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        @keyframes appear{
+            from{
+                opacity: 0;
+                scale: 0.5;
+            }
+        to {
+            opacity: 1;
+            scale: 1;
+        }
+    }
+
+    .block {
+        animation: appear linear;
+        animation-timeline: view();
+        animation-range: entry 0% cover
+        40%;
+    }
+
+    html {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+  }
+  body {
+    margin: 0px;
+    padding: 0px;
+    background-color: #ff8c00     ;
+    color:#fff;
+  }
+  .layar-dalam {
+    width: 1000px;
+    margin: auto;
+  }
+  .layar-penuh {
+    width: 100%;
+  }
+  nav {
+    z-index: 100;
+    color: #fff;
+    text-align: center;
+    position: fixed;
+    border-bottom: 1px solid #b1b1b1;
+    line-height: 60px;
+    width: 100%;
+    transition: background-color 0.5s ease;
+  }
+  nav.putih {
+    background-color: #fff;
+  }
+  nav .logo {
+    float: left;
+    position: relative;
+    line-height: 55px;
+    text-align: center;
+  }
+  nav .logo img {
+    vertical-align: middle;
+    width: 120px;
+  }
+  
+  nav .menu {
+    float: right;
+    height: 60px;
+    max-width: 700px;
+
+  }
+  
+  nav .menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  nav .menu ul li {
+    list-style-type: none;
+    float: left;
+    line-height: 60px;
+  }
+  
+  nav ul li a {
+    color: #fff;
+    text-align: center;
+    padding: 0px 16px 0px 16px;
+    text-decoration: none;
+  }
+  
+  nav ul li a:hover {
+    text-decoration: underline;
+  }
+  
+  /* pengaturan header */
+  header {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    z-index: 2;
+  }
+  header video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    z-index: -2;
+  }
+  header .intro {
+    z-index: 100;
+    color: #fff;
+    text-align: center;
+    position: relative;
+    top: 50%;
+  }
+  header .intro h3 {
+    font-size: 50px;
+  }
+
+  header .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #000;
+    opacity: 50%;
+    z-index: -1;
+  }
+  .tombol-menu {
+    position: absolute;
+    top: 1.7rem;
+    right: 1rem;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+  }
+  .tombol-menu .garis {
+    height: 3px;
+    background-color: #fff;
+  }
+  section {
+    padding: 50px 0px 50px 0px;
+  }
+  section h3 {
+    font-size: 30px;
+  }
+  section h3::after {
+    content: "";
+    border-bottom: 5px solid #c86b85;
+    width: 52px;
+    display: block;
+    margin: 20px auto;
+  }
+  
+  .container {
+            margin: 20px;
+            padding: 15px;
+
+  }
+
+  section.quote {
+  background: url("asset/pantai.JPG") no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+  color: #fff;
+  font-size: 20px;
+  font-style: italic;
+  padding: 100px;
+}
+section.quote .layar-dalam p {
+  display: inline;
+  background: url("asset/quote-icon.png") no-repeat;
+  padding: 40px;
+}
+  
+footer {
+  padding: 50px 0px 50px 0px;
+  background-color: #e86100  ;
+  color: #1d1b1b;
+}
+footer .layar-dalam {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+footer .layar-dalam div {
+  width: 20%;
+}
+footer .layar-dalam h5 {
+  margin-top: 0px;
+  font-size: 20px;
+  font-weight: bold;
+}
+footer .layar-dalam .copyright {
+  width: 100%;
+  margin-top: 30px;
+  padding-top: 30px;
+  border-top: 1px solid #666;
+  text-align: center;
+}
+
+    .card-container {
+      display: flex;
+      justify-content: center; /* Membuat konten rata tengah */
+      gap: 40px; /* Jarak antar kartu */
+      flex-wrap: nowrap; /* Pastikan tetap satu baris */
+    }
+
+    .card {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      width: 300px; /* Lebar tetap agar mudah penataan */
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .card-img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .card-content {
+      padding: 20px;
+      width: 100%;
+    }
+
+    h2 {
+      font-size: 1.2em;
+      color: #080808;
+      margin: 0 0 5px;
+    }
+
+    h3 {
+      font-size: 1.5em;
+      margin: 0.5em 0;
+    }
+
+    p {
+      color: #151515;
+      line-height: 1.6;
+    }
+
+    .rating {
+      font-size: 1.2em;
+      color: gold;
+      margin: 10px 0;
+    }
+
+    .location {
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    .map-link {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 15px;
+      background-color: #007bff;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+
+    .map-link:hover {
+      background-color: #0056b3;
+    }
+    
+    .anim-typewriter {
+    overflow: hidden;
+    border-right: 0.15em solid orange;
+    white-space: nowrap;
+    margin: 0  auto;
+    letter-spacing: .10em;
+    animation: typing 3.8s steps(70, end), blink-caret .75s step-end infinite;
+    width: max-content;
+    
+}
+
+@keyframes typing {
+    from {
+        width: 0
+    }
+
+    to {
+        width: 100%
+    }
+}
+
+@keyframes blink-caret {
+    from, to {
+        border-color: transparent
+    }
+
+    50% {
+        border-color: orange;
+    }
+}
+
+header .intro h3 {
+    font-size: 50px;
+    text-align: center;
+    max-width: 35vw;
+  }
+
+
+
+    </style>
+</head>
+<body>
+    <nav>
+      <div class="layar-dalam">
+    
+      </div>
+    </nav>
+    <div class="layar-penuh">
+      <header id="home">
+        <div class="overlay"></div>
+        <video autoplay muted loop>
+          <source src="asset/188855-883827784_large.mp4" type="video/mp4"/>
+        </video>
+        <div class="intro">
+          <h3 class="line-1 anim-typewriter title">pantai Gunung kidul</h3>  
+          <br>
+           Pantai di gunung kidul sangat menarik utuk di kujungi
+        </div>
+      </header>
+<p>
+    <div class="view">
+    <div class="card-container">
+    <div class="card">
+      <img src="asset/medium_Pantai Krakal Jogja.jpg" alt="Makam Raja Imogiri Kiri" class="card-img" />
+      <div class="card-content">
+        <h2>Pantai Krakal</h2>
+        <p>Rejosari, Kemadang, Kec. Tanjungsari, Kabupaten Gunung Kidul, Daerah Istimewa Yogyakarta 55881.
+
+        Pantai Krakal dikenal dengan ombaknya yang cukup besar, membuatnya menjadi destinasi yang sempurna bagi para penggemar selancar. 
+        
+        Namun, tetap waspada terhadap arus laut yang kuat. Pemandangan karst yang menjulang tinggi memberikan nuansa dramatis bagi pantai ini.
+        <p class="location">Gunung kidul, Yogyakarta</p>
+        <a href="https://maps.app.goo.gl/YTFboH6uXk64MrV96" class="map-link" target="_blank">Lihat di Maps</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="asset/pantai-drini.jpg" alt="Wisata Gunung Kidul Tengah" class="card-img" />
+      <div class="card-content">
+        <h2>Pantai Drini</h2>
+        <p>DJl. Drini Tim., Wonosobo, Banjarejo, Kec. Tanjungsari, Kabupaten Gunung Kidul, Daerah Istimewa Yogyakarta 55881.
+Pantai Drini adalah pantai yang unik karena terdapat pulau-pulau kecil di dekatnya yang dapat dijangkau dengan perahu tradisional. 
+Keindahan pasir putih dan air laut yang tenang membuat Pantai Drini cocok sebagai tempat bersantai atau berenang dengan aman.
+        <p class="location">Gunung Kidul, Yogyakarta</p>
+        <a href="https://maps.app.goo.gl/XTqaRB5sZrYFD6am9" class="map-link" target="_blank">Lihat di Maps</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="asset/pantai-sundak.jpg.webp" alt="Pantai Parangtritis Kanan" class="card-img" />
+      <div class="card-content">
+        <h2>pantai-sundak</h2>
+        <p>Jl. Pantai Sundak, Pule Gundes II, Sidoharjo, Kec. Tepus, Kabupaten Gunung Kidul, Daerah Istimewa Yogyakarta 55881,
+    
+    Pantai Sundak memiliki suasana yang santai dan pemandangan yang menakjubkan. Dikelilingi oleh tebing karst yang tinggi, pantai ini memberikan nuansa sepi yang sempurna untuk bersantai. 
+    
+    Terdapat juga fasilitas menyewa perahu untuk menjelajahi sekitarnya.
+        <p class="location">Gunung Kidul, Yogyakarta</p>
+        <a href="https://maps.app.goo.gl/JdaQbtAN6uBEwSGC6" class="map-link" target="_blank">Lihat di Maps</a>
+      </div>
+    </div>
+  </div>
+  <p>
+
+     <div class="card-container">
+    <div class="card">
+      <img src="asset/pantai-baron.webp" alt="pantai baron" class="card-img" />
+      <div class="card-content">
+        <h2>Pantai Baron</h2>
+        <p>Rejosari, Kemadang, Kec. Tanjungsari, Kabupaten Gunung Kidul, Daerah Istimewa Yogyakarta.
+          Pantai Baron menawarkan pesona yang berbeda dengan adanya sungai kecil yang bermuara di pantai. Keberadaan goa-goa alam di sekitar pantai menambah nilai eksotis tempat ini. Jangan lewatkan kesempatan untuk mengeksplorasi gua-gua yang misterius yang menjadi saksi bisu waktu.
+      <p class="location">Gunung kidul, Yogyakarta</p>
+        <a href="https://maps.app.goo.gl/cqkvCTWwDhhZuBXL6" class="map-link" target="_blank">Lihat di Maps</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="asset/pantai-kukup.jpg" alt="Wisata Gunung Kidul Tengah" class="card-img" />
+      <div class="card-content">
+        <h2>Pantai Kukup</h2>
+        <p>Ngepung, Kemadang, Kec. Tanjungsari, Kabupaten Gunung Kidul, Daerah Istimewa Yogyakarta 55881.
+
+Pantai Kukup dikenal dengan keindahan terumbu karangnya yang masih alami. 
+
+Airnya yang jernih memungkinkan Anda melihat keindahan bawah laut tanpa harus menyelam terlalu dalam. 
+
+Bagi pecinta fotografi, pantai ini juga menyuguhkan lanskap yang sangat fotogenik
+        <p class="location">Gunung Kidul, Yogyakarta</p>
+        <a href="https://maps.app.goo.gl/yP2aSFPh9ZDcyMEeA" class="map-link" target="_blank">Lihat di Maps</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="asset/pantai-ngandong-gunungkidul-yogyakarta.jpg" alt="Pantai Parangtritis Kanan" class="card-img" />
+      <div class="card-content">
+        <h2>pantai Ngandong</h2>
+        <p>Jl. Pantai Sel. Jawa, Sidoharjo, Kec. Tepus, Kabupaten Gunung Kidul, Daerah Istimewa Yogyakarta 55881.
+          Pantai Ngandong memiliki karakteristik unik dengan hamparan pasir yang luas dan landai, menciptakan suasana yang aman untuk bermain air. Terdapat juga hamparan rumput laut yang menambah pesona alam Pantai Ngandong.
+ <p class="location">Gunung Kidul, Yogyakarta</p>
+        <a href="https://maps.app.goo.gl/jibRVM7Qk8PVHCbM9" class="map-link" target="_blank">Lihat di Maps</a>
+      </div>
+    </div>
+  </div>
+  <p>
+    <a href="index.html"><img src="asset/back-arrow_icon-icons.com_72866.png" width="70px"></a>
+    <section class="quote">
+        <div class="layar-dalam">
+          <p></p>Cinta adalah angin, air, ombak, dan kamu</p>
+        </div>
+      </section>
+     
+        <footer id="contact">
+    <div class="layar-dalam">
+      <div>
+        <img src="asset/ra.gif">
+        <p></p>costumer service</p>
+        <p></p>pariwisatagunungkidul@gmail.com</p>
+      </div>
+    <div>
+        <img src="asset/phone-call.png" width="100px">
+        <p></p>
+        phoone number
+          08757887
+      </div>
+      <div>
+        <img src="asset/r.gif"><p></p>
+        1. Nama: Dinas Pariwisata Kabupaten Gunungkidul<p></p>
+2. Alamat: Jl. Sultan Agung No. 17, Wonokromo, Playen, Gunungkidul, DIY
+      </div>
+    </div>
+    <div class="layar-dalam">
+      <div class="copyright">&copy; pariwisatagunungkidul</div>
+    </div>
+  </footer>  
+    </body>
+
+
+</html>

@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        @keyframes appear{
+            from{
+                opacity: 0;
+                scale: 0.5;
+            }
+        to {
+            opacity: 1;
+            scale: 1;
+        }
+    }
+
+    .block {
+        animation: appear linear;
+        animation-timeline: view();
+        animation-range: entry 0% cover
+        40%;
+    }
+
+    html {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+  }
+  body {
+    margin: 0px;
+    padding: 0px;
+    background-color: #123524 ;
+    color:#fff;      ;
+  }
+  .layar-dalam {
+    width: 1000px;
+    margin: auto;
+  }
+  .layar-penuh {
+    width: 100%;
+  }
+  nav {
+    z-index: 100;
+    color: #fff;
+    text-align: center;
+    position: fixed;
+    border-bottom: 1px solid #b1b1b1;
+    line-height: 60px;
+    width: 100%;
+    transition: background-color 0.5s ease;
+  }
+  nav.putih {
+    background-color: #fff;
+  }
+  nav .logo {
+    float: left;
+    position: relative;
+    line-height: 55px;
+    text-align: center;
+  }
+  nav .logo img {
+    vertical-align: middle;
+    width: 120px;
+  }
+  
+  nav .menu {
+    float: right;
+    height: 60px;
+    max-width: 700px;
+
+  }
+  
+  nav .menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  nav .menu ul li {
+    list-style-type: none;
+    float: left;
+    line-height: 60px;
+  }
+  
+  nav ul li a {
+    color: #fff;
+    text-align: center;
+    padding: 0px 16px 0px 16px;
+    text-decoration: none;
+  }
+  
+  nav ul li a:hover {
+    text-decoration: underline;
+  }
+  
+  
+  header {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    z-index: 2;
+  }
+  header video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    z-index: -2;
+  }
+  header .intro {
+    z-index: 100;
+    color: #fff;
+    text-align: center;
+    position: relative;
+    top: 50%;
+  }
+  header .intro h3 {
+    font-size: 50px;
+  }
+
+  header .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #000;
+    opacity: 50%;
+    z-index: -1;
+  }
+  .tombol-menu {
+    position: absolute;
+    top: 1.7rem;
+    right: 1rem;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+  }
+  .tombol-menu .garis {
+    height: 3px;
+    background-color: #fff;
+  }
+  section {
+    padding: 50px 0px 50px 0px;
+  }
+  section h3 {
+    font-size: 30px;
+  }
+  
+  .container {
+            margin: 25px;
+            padding: 16px;
+
+  }
+
+  section.quote {
+  background: url("asset/bukit2.webp") no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+  color: #fff;
+  font-size: 20px;
+  font-style: italic;
+  padding: 100px;
+}
+section.quote .layar-dalam p {
+  display: inline;
+  background: url("asset/quote-icon.png") no-repeat;
+  padding: 40px;
+}
+  
+footer {
+  padding: 50px 0px 50px 0px;
+  background-color: #195905 ;
+  color: #fff;
+}
+footer .layar-dalam {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+footer .layar-dalam div {
+  width: 20%;
+}
+footer .layar-dalam h5 {
+  margin-top: 0px;
+  font-size: 20px;
+  font-weight: bold;
+}
+footer .layar-dalam .copyright {
+  width: 100%;
+  margin-top: 30px;
+  padding-top: 30px;
+  border-top: 1px solid #666;
+  text-align: center;
+}
+
+.card-container {
+      display: flex;
+      justify-content: center; /* Membuat konten rata tengah */
+      gap: 40px; /* Jarak antar kartu */
+      flex-wrap: nowrap; /* Pastikan tetap satu baris */
+    }
+
+    .card {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      width: 300px; /* Lebar tetap agar mudah penataan */
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .card-img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .card-content {
+      padding: 20px;
+      width: 100%;
+    }
+
+    h2 {
+      font-size: 1.2em;
+      color: #080808;
+      margin: 0 0 5px;
+    }
+
+    h3 {
+      font-size: 1.5em;
+      margin: 0.5em 0;
+    }
+
+
+    .location {
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    .map-link {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 15px;
+      background-color: #007bff;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+
+    .map-link:hover {
+      background-color: #0056b3;
+    }
+
+    p {
+      color: #151515;
+      line-height: 1.6;
+    }
+
+    
+    .anim-typewriter {
+    overflow: hidden;
+    border-right: 0.15em solid orange;
+    white-space: nowrap;
+    margin: 0  auto;
+    letter-spacing: .10em;
+    animation: typing 3.8s steps(70, end), blink-caret .75s step-end infinite;
+    width: max-content;
+    
+}
+
+@keyframes typing {
+    from {
+        width: 0
+    }
+
+    to {
+        width: 100%
+    }
+}
+
+@keyframes blink-caret {
+    from, to {
+        border-color: transparent
+    }
+
+    50% {
+        border-color: rgb(31, 204, 31);
+    }
+}
+
+header .intro h3 {
+    font-size: 50px;
+    text-align: center;
+    max-width: 39vw;
+  }
+
+    
+    </style>
+</head>
+<body>
+    <nav>
+      <div class="layar-dalam">
+    
+      </div>
+    </nav>
+    <div class="layar-penuh">
+      <header id="home">
+        <div class="overlay"></div>
+        <video autoplay muted loop>
+          <source src="asset/191354-890134722_small.mp4" type="video/mp4"/>
+        </video>
+        <div class="intro">
+          <h3 class="line-1 anim-typewriter title">Bukit di Gunung kidul</h3>  
+          <p></p>
+           Bukit di gunung kidul sangat menarik utuk di kujungi
+        </div>
+      </header>
+
+    <div class="view">
+      <p></p>
+      <div class="card-container">
+    <div class="card">
+      <img src="asset/bukit1.jpg" alt="Makam Raja Imogiri Kiri" class="card-img" />
+      <div class="card-content">
+        <h2>Bukit Bintang</h2>
+        <p>Nama asli Bukit Bintang adalah Bukit Hargo Dumilah. Lantas, kenapa disebut Bukit Bintang? Sebab, kebanyakan orang datang ke sini untuk menatap langit yang dipenuhi gemerlap bintang. Benar adanya, suasana malam di sini begitu syahdu.Bukit Bintang berada di lereng buki sehingga gemerlap Kota Yogyakarta bisa terlihat jelas dari sini. Kamu bisa duduk di area lapang hijau atau bersantai di beberapa warung makan di rooftop-nya.Lokasi: Srimulyo, Patuk, Kabupaten Gunungkidul, Yogyakarta
+      Jam operasional: setiap hari, 24 jam
+      Harga: Rp15 ribu
+       <p class="location">Gunung kidul, Yogyakarta</p>
+        <a href="https://maps.app.goo.gl/LUeNyHNLqMCcPHQU8" class="map-link" target="_blank">Lihat di Maps</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="asset/bukit2.webp" alt="Wisata Gunung Kidul Tengah" class="card-img" />
+      <div class="card-content">
+        <h2>Bukit Patuk Duwuri</h2>
+        <p>Bukit Patuk Duwur masih berada di kawasanPantai Midodaren dan Pantai Widodaren. Bukit yang menyerupai tebing ini berbatasan langsung dengan lautan lepas. Kamu bisa menikmati keindahan Samudra Hindia sampai puas di sini.Kamu sangat disarankan untuk datang saat matahari terbit atau matahari terbenam. Kemilau jingganya bakal membuatmu terpana, deh. Bukit Patuk Duwur ini masih belum terlalu diketahui banyak orang, lho.Lokasi: Kanigoro, Kecamatan Saptosari, Kebupaten Gunungkidul, YogyakartaJam operasional: setiap hari, 24 jamHarga: gratis
+        <p class="location">Gunung Kidul, Yogyakarta</p>
+        <a href="https://maps.app.goo.gl/UyZkc8eKm8TAUeZr7" class="map-link" target="_blank">Lihat di Maps</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="asset/bukit3.jpg" alt="Pantai Parangtritis Kanan" class="card-img" />
+      <div class="card-content">
+        <h2>Bukit Pengilon</h2>
+        <p>Lokasi Bukit Pengilon memang tak terlalu strategis. Pasalnya, bukit yang berada di kawasan Tepus, Gunungkidul, ini lokasinya cukup terpencil. Namun, perjalananmu sepadan dengan pemandangannya yang menakjubkan, lho.Bukit Pengilon merupakan hamparan hijau dengan lanskap samudra. Waktu terbaik berkunjung ke bukit ini adalah saat musim kemarau. Cuaca cerah akan mempermudahmu menjangkau bukit ini. Kamu bisa bermalam di sini, karena ada camping ground-nya.Lokasi: Gunung Api Purba Batur, Tepus, Kabupaten Gunungkidul, YogyakartaJam operasional: setiap hari, 24 jamHarga: Rp5 ribu
+          <p class="location">Gunung Kidul, Yogyakarta</p>
+        <a href="https://maps.app.goo.gl/iVboPm1T7NtNpLDUA" class="map-link" target="_blank">Lihat di Maps</a>
+      </div>
+    </div>
+  </div>
+  <p>
+
+     <div class="card-container">
+    <div class="card">
+      <img src="asset/bukit5.webp" alt="Makam Raja Imogiri Kiri" class="card-img" />
+      <div class="card-content">
+        <h2>Bukit Puncak Segoro</h2>
+        <p>Kalau pengin melihat keindahan laut lepas, kamu bisa mengunjungi Bukit Puncak Segoro. Wisata yang termasuk baru di Yogyakarta ini menyuguhkan lanskap Samudra Hindia yang menakjubkan. Semua bisa kamu saksikan dari tebing.Uniknya, di sini terdapat patung kuda terbang yang lengkap dengan kereta kencananya. Kalau suka foto estetik, kamu wajib berpose di depannya, nih. Sempatkan juga untuk mencicipi berbagai kuliner di sekitarnya, ya.Lokasi: Girikarto, Panggang, Kabupaten Gunungkidul, YogyakartaJam operasional: setiap hari pukul 08.00—18.00 WIBHarga: Rp50 ribu
+        <p class="location">Gunung kidul, Yogyakarta</p>
+        <a href="https://maps.app.goo.gl/YRxFbhJi6bb2SgFS6" class="map-link" target="_blank">Lihat di Maps</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="asset/bukit4.webp" alt="Wisata Gunung Kidul Tengah" class="card-img" />
+      <div class="card-content">
+        <h2>Bukit paralayang Watugupit</h2>
+        <p>Di saat kamu membutuhkan suasana tenang untuk healing, mungkin Bukit Paralayang Watugupit bisa jadi solusinya. Bukit yang berada di sebelah timur Pantai Parangtritis ini jadi spot terbaik untuk melihat matahari tenggelam.Duduk sembari melihat lautan lepas dengan cahaya oranye bakal meneduhkan hati. Kalau kamu pengin mencoba olahraga yang sedikit menantang, naiklah paralayang. Harganya mulai dari Rp300 ribuan.Lokasi: Jalan Watugupi, Kecamatan Purwosari, Kabupaten Gunungkidul, YogyakartaJam operasional: setiap hari pukul 09.00—19.00 WIBHarga: Rp10 ribu <p class="location">Gunung Kidul, Yogyakarta</p>
+        <a href="https://maps.app.goo.gl/4ShZNa35mEUPdZAFA" class="map-link" target="_blank">Lihat di Maps</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="asset/bukit6.jpg" alt="Pantai Parangtritis Kanan" class="card-img" />
+      <div class="card-content">
+        <h2>Stone Park Turunan</h2>
+        <p>Berlokasi di Kecamatan Panggang, Gunung Kidul, Stone Park Turunan menawarkan pemandangan indah lembah Sungai Oya yang dikelilingi perbukitan hijau. Di sini, kamu bisa menikmati keindahan alam yang masih alami dan segar. Jika beruntung, kamu bahkan bisa menyaksikan matahari terbit yang terlihat begitu cantik di atas lautan awan yang melayang di lembah.
+          <p class="location">Gunung Kidul, Yogyakarta</p>
+        <a href="https://maps.app.goo.gl/rJJFBanYy1QP4a5Y9" class="map-link" target="_blank">Lihat di Maps</a>
+      </div>
+    </div>
+  </div>
+  <p>
+        <a href="index.html"><img src="asset/back-arrow_icon-icons.com_72866.png" width="70px"></a>
+
+    <section class="quote">
+        <div class="layar-dalam">
+          <p></p>Keindahan alam bukit, sebuah karya Tuhan yang luar biasa</p>
+        </div>
+      </section>
+     
+        <footer id="contact">
+    <div class="layar-dalam">
+      <div>
+        <img src="asset/ra.gif">
+        <p></p>costumer service</p>
+        <p></p>pariwisatagunungkidul@gmail.com</p>
+      </div>
+    <div>
+        <img src="asset/phone-call.png" width="100px">
+        <p></p>
+        phoone number
+          08757887
+      </div>
+      <div>
+        <img src="asset/r.gif"><p></p>
+        1. Nama: Dinas Pariwisata Kabupaten Gunungkidul<p></p>
+2. Alamat: Jl. Sultan Agung No. 17, Wonokromo, Playen, Gunungkidul, DIY
+      </div>
+    </div>
+    <div class="layar-dalam">
+      <div class="copyright">&copy; pariwisatagunungkidul</div>
+    </div>
+  </footer>  
+    </body>
+
+
+</html>
